@@ -7,11 +7,17 @@
 \*------------------------------------*/
 
 :root {
-    /* colors */
+  /* colors */
+  --global-color-dark: #0f3557;
+  --global-color-light: #cce7ff;
 
-    /* opacity */
+  --global-font-color: var(--global-color-dark);
+  --global-background-color: var(--global-color-light);
 
-    /* transitions */
+  /* opacity */
+  --global-opacity: 0.6;
+
+  /* transitions */
 }
 
 /*------------------------------------*\
@@ -25,18 +31,24 @@
 */
 
 html {
-    font-size: 100%;
-    line-height: 1.5;
-    font-family: Helvetica, arial, sans-serif;
-    box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  font-size: 100%;
+  line-height: 1.5;
+  font-family: 'Work Sans', Helvetica, arial, sans-serif;
+  color: var(--global-font-color);
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--global-background-color);
+}
+
+body {
+  margin: 0;
 }
 
 *,
 *:before,
 *:after {
-    box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 /*
@@ -47,15 +59,15 @@ html {
 */
 
 ::-moz-selection {
-    background: red;
-    color: white;
-    text-shadow: none;
+  background: red;
+  color: white;
+  text-shadow: none;
 }
 
 ::selection {
-    background: red;
-    color: white;
-    text-shadow: none;
+  background: red;
+  color: white;
+  text-shadow: none;
 }
 
 /*------------------------------------*\
@@ -69,8 +81,8 @@ Default markup for images to make them responsive
 */
 
 img {
-    max-width: 100%;
-    vertical-align: top;
+  max-width: 100%;
+  vertical-align: top;
 }
 
 /*
@@ -82,34 +94,34 @@ img {
 h1,
 h2,
 h3 {
-    font-weight: 700;
+  font-weight: 700;
 }
 
 h1 {
-    font-size: 2.25rem;
-    line-height: 1.3333;
-    margin: 0 0 1.5rem;
+  font-size: 2.25rem;
+  line-height: 1.3333;
+  margin: 0 0 1.5rem;
 }
 
 h2 {
-    font-size: 2rem;
-    line-height: 1.25;
-    margin: 0 0 1.5rem;
+  font-size: 2rem;
+  line-height: 1.25;
+  margin: 0 0 1.5rem;
 }
 
 h3 {
-    font-size: 1.5rem;
-    line-height: 1.3333;
-    margin: 0 0 1.5rem;
+  font-size: 1.5rem;
+  line-height: 1.3333;
+  margin: 0 0 1.5rem;
 }
 
 h4,
 h5,
 h6 {
-    font-size: 1rem;
-    font-weight: 600;
-    line-height: 1.5;
-    margin: 0 0 1.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5;
+  margin: 0 0 1.5rem;
 }
 
 p,
@@ -119,66 +131,66 @@ dl,
 table,
 address,
 figure {
-    margin: 0 0 1.5rem;
+  margin: 0 0 1.5rem;
 }
 
 ul,
 ol {
-    padding-left: 1.5rem;
+  padding-left: 1.5rem;
 }
 
 li ul,
 li ol {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 blockquote {
-    font-style: normal;
-    font-size: 1.5rem;
-    line-height: 1.3333;
-    margin: 0 0 1.5rem;
+  font-style: normal;
+  font-size: 1.5rem;
+  line-height: 1.3333;
+  margin: 0 0 1.5rem;
 }
 
 blockquote * {
-    font-size: inherit;
-    line-height: inherit;
+  font-size: inherit;
+  line-height: inherit;
 }
 
 hr {
-    border: 0;
-    height: 1px;
-    background: LightGrey;
-    margin: 0 0 1.5rem;
+  border: 0;
+  height: 1px;
+  background: LightGrey;
+  margin: 0 0 1.5rem;
 }
 
 a {
-    color: red;
-    outline-color: red;
-    outline-width: medium;
-    outline-offset: 2px;
+  color: red;
+  outline-color: red;
+  outline-width: medium;
+  outline-offset: 2px;
 }
 
 a:visited,
 a:active {
-    color: red;
+  color: red;
 }
 
 a:hover,
 a:focus {
-    color: red;
+  color: red;
 }
 
 label,
 input {
-    display: block;
+  display: block;
 }
 
 select {
-    width: 100%;
+  width: 100%;
 }
 
 input::placeholder {
-    color: gray;
+  color: gray;
 }
 
 /*------------------------------------*\
@@ -192,26 +204,26 @@ input::placeholder {
 */
 
 .o-button-reset {
-    border: none;
-    margin: 0;
-    padding: 0;
-    width: auto;
-    overflow: visible;
-    background: transparent;
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+  background: transparent;
 
-    /* inherit font & color from ancestor */
-    color: inherit;
-    font: inherit;
+  /* inherit font & color from ancestor */
+  color: inherit;
+  font: inherit;
 
-    /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
-    line-height: normal;
+  /* Normalize `line-height`. Cannot be changed from `normal` in Firefox 4+. */
+  line-height: normal;
 
-    /* Corrects font smoothing for webkit */
-    -webkit-font-smoothing: inherit;
-    -moz-osx-font-smoothing: inherit;
+  /* Corrects font smoothing for webkit */
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
 
-    /* Corrects inability to style clickable `input` types in iOS */
-    -webkit-appearance: none;
+  /* Corrects inability to style clickable `input` types in iOS */
+  -webkit-appearance: none;
 }
 
 /*
@@ -221,14 +233,14 @@ input::placeholder {
 */
 
 .o-hide-accessible {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    border: 0;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
 }
 
 /*------------------------------------*\
@@ -241,7 +253,14 @@ input::placeholder {
     Website main logo
 */
 
-.c-logo {}
+.c-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  margin-top: 2rem;
+}
 
 /*
     Component: Sun
@@ -249,21 +268,91 @@ input::placeholder {
     The sun
 */
 
-.c-sun {}
+.c-sun {
+  width: 1.375rem;
+  height: 1.375rem;
+  fill: var(--global-font-color);
+}
 
-.c-logo .c-sun {}
+.c-logo .c-sun {
+}
 
 /*
     Component: App
     ---
     Main app wrapper
 */
+.c-app {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: start;
+  min-height: 100vh;
+  max-width: 25rem;
+  margin: 0 auto;
+}
+
+.c-app__summary {
+  font-size: 1.75rem;
+  line-height: 2.5rem;
+}
+
+.c-app__location {
+  margin-bottom: 2rem;
+}
 
 /*
     Component: Horizon
     ---
     Horizon with sun visualisation
 */
+.c-horizon {
+  width: 100%;
+  margin-bottom: 2.125rem;
+}
+
+.c-horizon__sky-wrapper {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+  padding: 1.375rem 2.5rem;
+}
+
+.c-horizon__sky {
+  position: relative;
+  height: 100%;
+}
+
+.c-horizon__sun {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  transform: translateY(100%);
+
+  &::before {
+    content: attr(data-time);
+    font-size: 0.75rem;
+    line-height: 0.875rem;
+    padding-bottom: 0.5rem;
+    display: block;
+    margin: auto;
+  }
+}
+
+.c-horizon__line {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid black;
+}
+
+.c-horizon__time {
+  font-size: 0.75rem;
+  line-height: 0.875rem;
+  padding-top: 0.4375rem;
+}
 
 /*------------------------------------*\
 #UTILITIES
@@ -273,6 +362,9 @@ input::placeholder {
     Utilities: Mute
     Mute with opacity
 */
+.u-muted {
+  opacity: var(--global-opacity);
+}
 
 /*------------------------------------*\
 #STATES
@@ -283,6 +375,10 @@ input::placeholder {
 */
 
 /* Night version: just switch the light and dark vars */
+.is-night {
+  --global-font-color: var(--global-color-light);
+  --global-background-color: var(--global-color-dark);
+}
 
 /*------------------------------------*\
 #MEDIA
@@ -296,72 +392,71 @@ input::placeholder {
 */
 
 @media print {
-
-    *,
-    *:before,
-    *:after {
-        background: transparent !important;
-        color: #000 !important;
-        /* Black prints faster:
+  *,
+  *:before,
+  *:after {
+    background: transparent !important;
+    color: #000 !important;
+    /* Black prints faster:
         http://www.sanbeiji.com/archives/953 */
-        box-shadow: none !important;
-        text-shadow: none !important;
-    }
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
 
-    a,
-    a:visited {
-        text-decoration: underline;
-    }
+  a,
+  a:visited {
+    text-decoration: underline;
+  }
 
-    a[href]:after {
-        content: " (" attr(href) ")";
-    }
+  a[href]:after {
+    content: ' (' attr(href) ')';
+  }
 
-    abbr[title]:after {
-        content: " (" attr(title) ")";
-    }
+  abbr[title]:after {
+    content: ' (' attr(title) ')';
+  }
 
-    /*
+  /*
     * Don't show links that are fragment identifiers,
     * or use the `javascript:` pseudo protocol
     */
-    a[href^="#"]:after,
-    a[href^="javascript:"]:after {
-        content: "";
-    }
+  a[href^='#']:after,
+  a[href^='javascript:']:after {
+    content: '';
+  }
 
-    pre {
-        white-space: pre-wrap !important;
-    }
+  pre {
+    white-space: pre-wrap !important;
+  }
 
-    pre,
-    blockquote {
-        border: 1px solid #999;
-        page-break-inside: avoid;
-    }
+  pre,
+  blockquote {
+    border: 1px solid #999;
+    page-break-inside: avoid;
+  }
 
-    /*
+  /*
     * Printing Tables:
     * http://css-discuss.incutio.com/wiki/Printing_Tables
     */
-    thead {
-        display: table-header-group;
-    }
+  thead {
+    display: table-header-group;
+  }
 
-    tr,
-    img {
-        page-break-inside: avoid;
-    }
+  tr,
+  img {
+    page-break-inside: avoid;
+  }
 
-    p,
-    h2,
-    h3 {
-        orphans: 3;
-        widows: 3;
-    }
+  p,
+  h2,
+  h3 {
+    orphans: 3;
+    widows: 3;
+  }
 
-    h2,
-    h3 {
-        page-break-after: avoid;
-    }
+  h2,
+  h3 {
+    page-break-after: avoid;
+  }
 }
