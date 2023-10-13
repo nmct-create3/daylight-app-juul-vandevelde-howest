@@ -43,10 +43,10 @@ let getAPI = async (lat, lon) => {
   // Eerst bouwen we onze url op
   // Met de fetch API proberen we de data op te halen.
   // Als dat gelukt is, gaan we naar onze showResult functie.
-  const weatherInfo = await fetch(`http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=762e2b81934b236a381f521b2dcb8cb4&units=metric&lang=nl&cnt=1`).then((response) => response.json());
+  const weatherInfo = await fetch(`http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=APIKEYHERE&units=metric&lang=nl&cnt=1`).then((response) => response.json());
   console.log(weatherInfo);
+  console.info(sunrise.toLocaleTimeString({ hour: '2-digit', minute: '2-digit' }));
   sunrise = new Date(weatherInfo.city.sunrise * 1000 - weatherInfo.city.timezone);
-  console.info(sunrise.toLocaleTimeString({ hour: '2-digit', minute: '2-digit'}));
 };
 
 document.addEventListener('DOMContentLoaded', function () {
