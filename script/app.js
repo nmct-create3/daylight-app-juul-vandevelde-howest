@@ -38,10 +38,17 @@ let placeSunAndStartMoving = (totalMinutes, sunrise) => {
   // Anders kunnen we huidige waarden evalueren en de zon updaten via de updateSun functie.
   domSun.dataset.time = _parseMillisecondsIntoReadableTime(currentDate.getTime() / 1000);
   let uptimePercentage = (sunUpTime / totalMinutes) * 100;
+  const domHtml = document.documentElement;
+  domHtml.classList.add('is-day');
+  domHtml.classList.remove('is-night');
   if (uptimePercentage > 100) {
     uptimePercentage = 100;
+    domHtml.classList.remove('is-day');
+    domHtml.classList.add('is-night');
   } else if (uptimePercentage < 0) {
     uptimePercentage = 0;
+    domHtml.classList.remove('is-day');
+    domHtml.classList.add('is-night');
   }
   updateSun(uptimePercentage);
   // We voegen ook de 'is-loaded' class toe aan de body-tag.
