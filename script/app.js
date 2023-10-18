@@ -20,7 +20,7 @@ let updateSun = (uptimePercentage) => {
   if (uptimePercentage <= 50) {
     domSun.style.bottom = `${uptimePercentage * 2}%`;
   } else {
-    domSun.style.bottom = `${100 - uptimePercentage}%`;
+    domSun.style.bottom = `${(100 - uptimePercentage) * 2}%`;
   }
 };
 
@@ -86,6 +86,9 @@ let showResult = (queryResponse) => {
   // Hier gaan we een functie oproepen die de zon een bepaalde positie kan geven en dit kan updaten.
   // Geef deze functie de periode tussen sunrise en sunset mee en het tijdstip van sunrise.
   placeSunAndStartMoving((sunset - sunrise) / 60, sunrise);
+  setInterval(() => {
+    placeSunAndStartMoving((sunset - sunrise) / 60, sunrise);
+  }, 60 * 1000);
 };
 
 // 2 Aan de hand van een longitude en latitude gaan we de yahoo wheater API ophalen.
